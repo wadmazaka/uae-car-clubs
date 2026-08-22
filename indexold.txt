@@ -1,0 +1,1838 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    
+
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>UAE CAR CLUBS - UCC</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+        <!-- Place favicon.ico in the root directory -->
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+        
+        <link rel="stylesheet" href="css/dripicons.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/meanmenu.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+        <!-- whatsapp icon -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <style>
+
+
+
+.hero-slider {
+    width: 95%;
+    height: 90vh;
+    margin: 40px auto;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    position: relative;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    /* Dark Overlay for better text visibility */
+    background: rgba(0,0,0,0.45);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: #fff;
+    max-width: 600px;
+    z-index: 2;
+}
+
+.overlay h4 {
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.overlay h1 {
+    font-size: 65px;
+    margin: 15px 0;
+    color: white;
+}
+
+.overlay p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .overlay h1 {
+        font-size: 35px;
+    }
+}
+
+
+.about-ucc {
+    padding: 100px 0;
+    background: #f9fbfd;
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Image */
+.about-image {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 20px;
+    animation: fadeInLeft 1.2s ease;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.about-image:hover img {
+    transform: scale(1.08);
+}
+
+/* Content */
+.about-content {
+    flex: 1;
+    animation: fadeInRight 1.2s ease;
+}
+
+.about-content h5 {
+    color: #125875;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.about-content h4 {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.about-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #125875;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    background: #0d3f55;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+}
+
+.vision-mission {
+    padding: 100px 0;
+    background: #ffffff;
+    text-align: center;
+}
+
+/* Title Animation */
+.section-title {
+    animation: fadeDown 1s ease;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: #000;
+}
+
+.section-title p {
+    color: #777;
+    margin-bottom: 50px;
+}
+
+/* Wrapper */
+.vm-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Card */
+.vm-box {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 40px 30px;
+    border-radius: 15px;
+    max-width: 450px;
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Stagger Animation */
+.vm-box:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.vm-box:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+/* Red animated top line */
+.vm-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, red, black);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.5s;
+}
+
+.vm-box:hover::before {
+    transform: scaleX(1);
+}
+
+/* Hover */
+.vm-box:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* Icon */
+.vm-box .icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: 0.4s;
+}
+
+.vm-box:hover .icon {
+    background: red;
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* Text */
+.vm-box h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.vm-box p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vm-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* SECTION */
+/* SECTION */
+.core-values {
+  background: #ffffff; /* ✅ WHITE BACKGROUND */
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* TITLE */
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 42px;
+  background: linear-gradient(to right, #ff0000, #990000);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #555;
+  font-size: 18px;
+}
+
+/* GRID */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.value-card {
+  background: #0b0b0b; /* 🔥 BLACK CARD */
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+/* GLOW EFFECT */
+.value-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,0,0,0.4), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.value-card:hover::before {
+  opacity: 1;
+}
+
+/* HOVER */
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+}
+
+/* TEXT */
+.value-card h3 {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.value-card p {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Grid */
+
+/* CARD */
+.team-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: 70px auto;
+  border: 2px solid #cfcfcf;
+  
+  overflow: visible; /* 🔥 MUST */
+  padding: 30px 40px 30px 130px; /* left space for circle */
+}
+
+/* IMAGE WRAPPER (OUTER RING) */
+.team-img {
+  position: absolute;
+  left: -95px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  
+  background: #e5e5e5; /* outer light ring */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* INNER WHITE BORDER */
+.team-img::before {
+  content: "";
+  position: absolute;
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* ACTUAL IMAGE */
+.team-img img {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* gallery */
+
+.car-gallery {
+    padding: 80px 0;
+    background: #000;
+}
+
+/* Image Box */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+/* Image */
+.gallery-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+/* Hover Zoom */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Red Glow Border */
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.gallery-item:hover::after {
+    border-color: red;
+    box-shadow: 0 0 20px red;
+}
+
+/* Optional Overlay */
+.gallery-item::before {
+    content: "View";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
+}
+
+.social-connect {
+    padding: 100px 0;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+}
+
+.social-connect::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.social-connect .section-title {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+.social-connect .section-title h2 {
+    font-size: 36px;
+    color: red;
+    font-weight: bold;
+}
+
+.social-connect .section-title p {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Social Cards */
+.social-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.9);
+    color: #111;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-width: 250px;
+}
+
+.social-card i {
+    font-size: 24px;
+    color: #fff;
+    background: #111;
+    border-radius: 50%;
+    padding: 10px;
+    flex-shrink: 0;
+}
+
+/* Color-coded circles */
+.social-card.facebook i { background: #1877F2; }
+.social-card.instagram i { background: #C13584; }
+.social-card.telegram i { background: #0088CC; }
+.social-card.youtube i { background: #FF0000; }
+.social-card.email i { background: #2A49A0; }
+.social-card.website i { background: #111; }
+
+
+.social-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+
+
+
+
+
+/* WRAPPER (NEW) */
+.team-section-wrapper * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  
+}
+
+/* SECTION */
+.team-section-wrapper .team-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 15px;
+  background-color: #000;
+}
+
+/* HEADING */
+.team-section-wrapper .heading {
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ffcc00, #ff3c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+}
+
+/* CARD */
+.team-section-wrapper .team-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: 60px auto;
+  border: 2px solid #ccc;
+  overflow: visible;
+  padding-left: 100px;
+}
+
+/* IMAGE CIRCLE */
+.team-section-wrapper .img-box {
+  position: absolute;
+  left: -70px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 6px solid #ddd;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGE */
+.team-section-wrapper .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
+
+/* CONTENT */
+.team-section-wrapper .content {
+  flex: 1;
+  padding: 10px 20px;
+}
+
+.team-section-wrapper .content h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.team-section-wrapper .content span {
+  display: block;
+  width: 60%;
+  height: 2px;
+  margin: 12px 0;
+  background: #000;
+}
+
+.team-section-wrapper .content p {
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* COLORS */
+.team-section-wrapper .yellow {
+  background: linear-gradient(to right, #f7c600, #f4d06f);
+}
+
+.team-section-wrapper .orange {
+  background: linear-gradient(to right, #ff5e2e, #ff7a45);
+  color: #fff;
+}
+
+.team-section-wrapper .orange span {
+  background: #fff;
+}
+
+.team-section-wrapper .blue {
+  background: linear-gradient(to right, #0b3c6f, #1c6ea4);
+  color: #fff;
+}
+
+.team-section-wrapper .blue span {
+  background: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .team-section-wrapper .heading {
+    font-size: 26px;
+  }
+
+  .team-section-wrapper .team-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 15px;
+  }
+
+  .team-section-wrapper .img-box {
+    position: relative;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+
+  .team-section-wrapper .content {
+    padding: 10px;
+  }
+
+  .team-section-wrapper .content h2 {
+    font-size: 18px;
+  }
+
+  .team-section-wrapper .content span {
+    margin: 10px auto;
+    width: 50%;
+  }
+
+  .team-section-wrapper .content p {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+}
+
+/* group photoes */
+
+
+
+.group-photos-section {
+    padding: 80px 0;
+    background: #111;
+}
+
+/* Heading */
+
+
+
+.group-photos-section .section-title h2 {
+    color: red;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.group-photos-section .section-title h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: red;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+/* Image Box */
+.group-img {
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    height: 350px; /* 👈 same height for all */
+}
+
+/* Equal Image Size */
+.group-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 👈 fill box (may crop slightly) */
+    transition: 0.5s;
+}
+
+/* Hover Zoom */
+.group-img:hover img {
+    transform: scale(1.05);
+}
+
+/* Red Glow Border */
+.group-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: 0.4s;
+}
+
+.group-img:hover::after {
+    border-color: red;
+    box-shadow: 0 0 25px red;
+}
+
+
+.achievements-section {
+    padding: 100px 0;
+    background: white;
+    text-align: center;
+}
+
+/* Heading */
+.achievements-section h2 {
+    color: red;
+    font-size: 38px;
+}
+
+.achievements-section p {
+    color: #ccc;
+    margin-bottom: 60px;
+}
+
+/* Wrapper */
+.achievements-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* Common Box */
+.achievement-box {
+    width: 300px;
+    height: 340px;
+   
+    border: 3px solid red;
+    transition: 0.5s;
+    position: relative;
+}
+
+/* Inner Fix */
+.achievement-box .inner {
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+/* Image FIX */
+.achievement-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 👈 FULL IMAGE SHOW */
+}
+
+/* Hover Effect */
+.achievement-box:hover {
+    transform: scale(1.08);
+    box-shadow: 0 20px 40px rgba(255,0,0,0.5);
+}
+
+/* Animation */
+.achievement-box {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.achievement-box:nth-child(1){ animation-delay: 0.3s; }
+.achievement-box:nth-child(2){ animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .achievement-box {
+        width: 260px;
+        height: 300px;
+    }
+} 
+
+
+
+
+
+
+.ucc-contact {
+    padding: 100px 0;
+    background: #000;
+    color: #fff;
+}
+
+.contact-info h2 {
+    color: red;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-box i {
+    font-size: 20px;
+    color: red;
+    margin-right: 15px;
+}
+
+/* Form */
+.contact-form {
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.2);
+}
+
+.contact-form h3 {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    background: #222;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.contact-form input:focus {
+    border: 1px solid red;
+}
+
+/* Button */
+.contact-form button {
+    width: 100%;
+    padding: 14px;
+    background: red;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #ff3333;
+    box-shadow: 0 0 20px red;
+}
+
+
+
+/* our community  */
+/* SECTION */
+.community-section {
+  background: #0b0b0b;
+  padding: 70px 20px;
+}
+
+/* TITLE */
+.community-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+
+  background: linear-gradient(to right, #ff0000, #990000);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* GRID */
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* IMAGE CARD */
+.community-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+
+  border: 2px solid rgba(255, 0, 0, 0.3);
+}
+
+/* IMAGE */
+.community-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.community-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 0, 0, 0.2);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.community-item:hover::after {
+  opacity: 1;
+}
+
+.community-item:hover img {
+  transform: scale(1.1);
+}
+
+/* GLOW EFFECT */
+.community-item:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .community-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+    </head>
+    <body>
+
+     <header class="header-area header-three">  
+
+   
+    <div class="header-top second-header d-none d-md-block">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-4 col-md-4 d-none d-lg-block">
+                    <div class="header-social">
+                        <span>
+                            Follow us:- 
+                           <a href="https://www.facebook.com/UCC-107931234694300/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/ucc.uae?igshid=16ryj4t4civhw"><i class="fab fa-instagram"></i></a>
+                             <a href="https://youtube.com/channel/UC5Ag-zb1wkDT5uEbrMq_hzg"></a> <i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-8 d-none d-lg-block text-right">
+                    <div class="header-cta">
+                        <ul>
+                            <li>
+                                <div class="call-box">
+                                    <div class="icon">
+                                        <img src="img/icon/phone-call.png" alt="img">
+                                    </div>
+                                    <!-- <div class="text">
+                                        <span>Call Now !</span>
+                                        <strong><a href="tel:+971 50 857 8251">+971 50 857 8251</a></strong>
+                                    </div> -->
+                                </div>
+                            </li>
+                            <li>
+                                <div class="call-box">
+                                    <div class="icon">
+                                        <img src="img/icon/mailing.png" alt="img">
+                                    </div>
+                                    <div class="text">
+                                        <span>Email Now</span>
+                                        <strong><a href="mailto:Uccuaecarclubs@gmail.com">Uccuaecarclubs@gmail.com</a></strong>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>                        
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Menu -->
+     <div id="header-sticky" class="menu-area">
+        <div class="container">
+            <div class="second-menu">
+                <div class="row align-items-center">
+
+                  
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="images/logo.png"width="180px"  height="130px" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+
+                
+                    <div class="col-xl-9 col-lg-6">
+                        <div class="main-menu text-right text-xl-right">
+                            <nav id="mobile-menu">
+                                <ul class="menu-inline">
+
+                                  
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#about">About UCC</a></li>
+                                    <li><a href="#gallery">Categories</a></li>
+                                      <li><a href="#community">Our Commmunity</a></li>
+                                     <li><a href="#Design">Achievements</a></li>
+                                   <li><a href="#Social">Social media channels </a></li>
+                                    <li><a href="#contact">Contact</a></li>
+
+                                
+                                  
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                   
+                    <div class="col-xl-3 col-lg-3 text-right d-none d-lg-block">
+                        <div class="login">
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="mobile-menu"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+
+
+</header>
+
+        <!-- header-end -->
+        <!-- offcanvas-area -->
+         
+          <!-- offcanvas-end -->
+        <!-- main-area -->
+
+
+
+
+
+  <!-- WhatsApp Floating Button -->
+<!--<a href="https://api.whatsapp.com/send?phone=971508578251&text=Hello! I’m interested in UAE CAR CLUBS - UCC events and activities." -->
+<!--   class="float" target="_blank">-->
+<!--  <i class="fab fa-whatsapp my-float"></i>-->
+<!--</a>-->
+<section class="hero-slider" id="home">
+    <div class="slides">
+
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('images/community11.png');">
+            <div class="overlay">
+                <h4>Uniting UAE Car & Bike Enthusiasts</h4>
+                <h1>UAE CAR CLUBS - UCC</h1>
+                <p>Join the UAE's largest automotive community and experience thrilling events, meetups, and motor shows.</p>
+               
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('images/community10.png');">
+            <div class="overlay">
+                <h4>Exclusive Car & Bike Events</h4>
+                <h1>MEET, DRIVE, CELEBRATE</h1>
+                <p>From motor shows to track days, we create unforgettable experiences for car and bike lovers across the UAE.</p>
+                
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('images/community12.png');">
+            <div class="overlay">
+                <h4>Passion • Community • Innovation</h4>
+                <h1>DRIVE THE UAE AUTOMOTIVE CULTURE</h1>
+                <p>Connect with enthusiasts, showcase your ride, and be part of a growing automotive family with UCC.</p>
+                <a href="contact.html" class="inspection-btn">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="about-ucc" id="about">
+    <div class="container">
+        <div class="about-wrapper">
+
+            <!-- Image -->
+            <div class="about-image">
+                <img src="images/community9.png" alt="UCC Cars">
+            </div>
+
+            <!-- Content -->
+            <div class="about-content">
+                <h5>About UCC</h5>
+                <h2>UAE CAR CLUBS - UCC</h2>
+                <h4>🇦🇪 مجموعة أندية السيارات في الامارات</h4>
+
+                <p>
+                    Established in April 2019, UAE CAR CLUBS (UCC) brings together car and bike enthusiasts 
+                    under one powerful community. Our mission is to promote the passion for automotive culture 
+                    across the UAE through exciting motor events, social gatherings, and unforgettable experiences.
+                </p>
+
+                <p>
+                    We focus on building a positive, friendly, and diverse environment where enthusiasts can connect, 
+                    share their passion, and grow together.
+                </p>
+
+               
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="vision-mission">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Vision & Mission</h2>
+            <p>Driving the future of automotive culture in the UAE</p>
+        </div>
+
+        <div class="vm-wrapper">
+
+            <!-- Vision -->
+            <div class="vm-box">
+                <div class="icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>
+                    To be the UAE’s most influential and innovative automotive community, 
+                    uniting car enthusiasts of all backgrounds while setting the benchmark 
+                    for world-class motor events and experiences across the region.
+                </p>
+            </div>
+
+            <!-- Mission -->
+            <div class="vm-box">
+                <div class="icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>
+                    To create exceptional automotive experiences by organizing high-quality, safe, 
+                    and engaging motor events that bring together a diverse community of car enthusiasts. 
+                    We aim to foster passion, connection, and growth within the UAE’s automotive culture 
+                    while continuously elevating standards through creativity, professionalism, and inclusivity.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="core-values">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>💎 Core Values</h2>
+      <p>What drives UAE CAR CLUBS - UCC</p>
+    </div>
+
+    <div class="values-grid">
+
+      <div class="value-card">
+        <h3>Passion for Automotive Culture</h3>
+        <p>We live and breathe cars, driven by a deep passion to celebrate and grow the automotive lifestyle in the UAE.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Community & Inclusivity</h3>
+        <p>With members from over 30 nationalities, we embrace diversity and create a welcoming environment for all enthusiasts.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Excellence in Execution</h3>
+        <p>With 185+ successful events, we deliver high-quality, well-organized, and unforgettable automotive experiences.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Safety First</h3>
+        <p>We prioritize the safety and well-being of our members, participants, and audiences in every event.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Innovation & Growth</h3>
+        <p>We continuously evolve, bringing fresh ideas and new experiences to stay ahead in the UAE automotive scene.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Integrity & Professionalism</h3>
+        <p>We operate with transparency, reliability, and respect in all our partnerships and engagements.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="achievements-section" id="Design">
+    <div class="container">
+
+        <div class="section-title text-center">
+            <h2>Achievements & Awards</h2>
+            <p>Celebrating our milestones and success</p>
+        </div>
+
+        <div class="achievements-wrapper">
+
+           
+            <div class="achievement-box hex">
+                <div class="inner">
+                    <img src="images/about.jpeg">
+                </div>
+            </div>
+
+         
+            <div class="achievement-box hex">
+                <div class="inner">
+                    <img src="images/about2.jpeg">
+                </div>
+            </div>
+            
+            <div class="achievement-box hex">
+                <div class="inner">
+                    <img src="images/image1.png">
+                </div>
+            </div>
+
+         
+            <div class="achievement-box hex">
+                <div class="inner">
+                    <img src="images/image2.png">
+                </div>
+            </div>
+              <div class="achievement-box hex">
+                <div class="inner">
+                    <img src="images/image3.png">
+                </div>
+            </div>
+              <div class="achievement-box hex">
+                <div class="inner">
+                    <img src="images/image4-new.jpeg">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="group-photos-section" id="gallery">
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="section-title text-center">
+            <h2>Categories</h2>
+        </div>
+
+        <div class="row">
+
+            <!-- Row 1 -->
+            <div class="col-lg-6 col-md-6 mb-4">
+                <div class="group-img">
+                    <img src="images/group.png" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 mb-4">
+                <div class="group-img">
+                    <img src="images/group1.jpeg" alt="">
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="col-lg-6 col-md-6 mb-4">
+                <div class="group-img">
+                    <img src="images/group3.png" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 mb-4">
+                <div class="group-img">
+                    <img src="images/group4.png" alt="">
+                </div>
+            </div>
+              
+
+
+
+        </div>
+    </div>
+</section>
+
+<section class="community-section" id="community">
+  <h2 class="community-title">OUR COMMUNITY</h2>
+
+  <div class="community-grid">
+
+    <div class="community-item">
+      <img src="images/community1.png" alt="">
+    </div>
+
+    <div class="community-item">
+      <img src="images/community2.png" alt="">
+    </div>
+
+    <div class="community-item">
+      <img src="images/community7.png" alt="">
+    </div>
+
+    <div class="community-item">
+      <img src="images/comm1.png" alt="">
+    </div>
+
+    <div class="community-item">
+      <img src="images/community5.png" alt="">
+    </div>
+
+    <div class="community-item">
+      <img src="images/comm.png" alt="">
+    </div>
+     
+
+
+
+  </div>
+</section>
+
+<section class="team-section-wrapper">
+
+<section class="team-section">
+
+  <h1 class="heading">UCC MANAGEMENT TEAM</h1>
+
+ 
+  <div class="team-card yellow">
+    <div class="img-box">
+      <img src="images/team1.png" alt="">
+    </div>
+    <div class="content">
+      <h2>Mr. Salem Ahmed Alsuwaidi</h2>
+      <span></span>
+      <p class="" style="color: white;">CO - FOUNDER <br> & <br> PRESIDENT OF UCC</p>
+    </div>
+  </div>
+
+
+  <div class="team-card orange">
+    <div class="img-box">
+      <img src="images/team2.png" alt="">
+    </div>
+    <div class="content">
+      <h2>Dr. Mahadi Alamin</h2>
+      <span></span>
+      <p>CO - FOUNDER <br> & <br> MARKETING MIND OF UCC</p>
+    </div>
+  </div>
+
+
+  <div class="team-card blue">
+    <div class="img-box">
+      <img src="images/team3.png" alt="">
+    </div>
+    <div class="content">
+      <h2>Eng. Abdalla Khaleel</h2>
+      <span></span>
+      <p>HEAD OF EVENTS OPERATIONS OF UCC</p>
+    </div>
+  </div>
+
+</section>
+
+</section>
+
+<section class="social-connect" id="Social">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2>Stay Connected With UCC</h2>
+            <p>Follow us on our social media platforms for the latest updates and events</p>
+        </div>
+
+        <div class="social-cards">
+
+            <a href="https://www.facebook.com/UCC-107931234694300/" target="_blank" class="social-card facebook">
+                <i class="fab fa-facebook-f"></i>
+                <span>UCC</span>
+            </a>
+
+            <a href="https://instagram.com/ucc.uae?igshid=16ryj4t4civhw" target="_blank" class="social-card instagram">
+                <i class="fab fa-instagram"></i>
+                <span>ucc.uae</span>
+            </a>
+
+            <a href="https://t.me/uccuae" target="_blank" class="social-card telegram">
+                <i class="fab fa-telegram-plane"></i>
+                <span>uccuae</span>
+            </a>
+
+            <a href="https://youtube.com/channel/UC5Ag-zb1wkDT5uEbrMq_hzg" target="_blank" class="social-card youtube">
+                <i class="fab fa-youtube"></i>
+                <span>uaecarclubsucc</span>
+            </a>
+
+            <a href="mailto:Uccuaecarclubs@gmail.com" target="_blank" class="social-card email">
+                <i class="fas fa-envelope"></i>
+                <span>Uccuaecarclubs@gmail.com</span>
+            </a>
+
+            <a href="https://www.uaecarclubs.com" target="_blank" class="social-card website">
+                <i class="fas fa-globe"></i>
+                <span>www.uaecarclubs.com</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+<section class="ucc-contact text-center" id="contact">
+    <div class="container">
+        <div class="row">
+
+            <!-- Left Info -->
+            <!-- <div class="col-lg-6">
+                <div class="contact-info">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch with UAE CAR CLUBS - UCC for events, collaborations, and enquiries.</p>
+
+                    <div class="info-box">
+                        <i class="fas fa-phone"></i>
+                        <span>+971 50 857 8251 (UAE)</span>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@uccuaecarclubs.com</span>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Right Form -->
+            <div class="col-lg-7">
+                <div class="contact-form">
+                    <h3>Send Enquiry</h3>
+
+                <form id="uccForm">
+
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <input type="text" id="phone" placeholder="Your Phone Number" required>
+    <input type="text" id="Message" placeholder="Your Message" required>
+
+    <button type="submit">Send Enquiry</button>
+
+</form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<footer class="footer-bg footer-p pt-90" style="background-color: #125875; background-image: url(img/bg/footer-bg.png);">
+    <div class="footer-top pb-70">
+        <div class="container">
+            <div class="row justify-content-between">
+
+
+
+
+                <!-- About -->
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="footer-widget mb-30">
+                        <div class="f-widget-title">
+                            <h2>About UAE CAR CLUBS - UCC</h2>
+                        </div>
+                        <div class="f-contact">
+                            <p>
+                                UAE CAR CLUBS (UCC) was established in April 2019 to unite car and bike enthusiasts across the UAE. 
+                                Our goal is to create a vibrant community through social gatherings, motor events, and automotive experiences. 
+                                Passion, community, and innovation drive everything we do.
+                            </p>
+                        </div>
+                        <div class="footer-social mt-10">                                  
+                            <a href="https://www.facebook.com/UCC-107931234694300/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/ucc.uae?igshid=16ryj4t4civhw"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/channel/UC5Ag-zb1wkDT5uEbrMq_hzg"><i class="fab fa-youtube"></i></a>
+                        </div>    
+                    </div>
+                </div>
+
+                <!-- Events & Services -->
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="footer-widget mb-30">
+                        <div class="f-widget-title">
+                            <h2>Our Activities</h2>
+                        </div>
+                        <div class="footer-link">
+                            <ul>                                      
+                                <li><a href="">Motor Events Organizer </a></li>
+                                <li><a href="">Cars & Bikes show organizer </a></li>
+                                <li><a href="">Cars & Bikes Mall Display </a></li>
+                                <li><a href="">Event Emcee & Commentator</a></li>
+                                <li><a href="">Motor Event Media professional</a></li>
+                                <li><a href="">Motor event Marshals </a></li>
+                                <li><a href="">Social media Campaigns </a></li>
+                                <li><a href="">Social media influencers Campaign</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-xl-4 col-lg-4 col-sm-6">
+                    <div class="footer-widget mb-30">
+                        <div class="f-widget-title">
+                            <h2>Contact Us</h2>
+                        </div>
+                        <div class="f-contact">
+                            <ul>
+                                <!-- <li class="phone-inline">
+                                    <i class="icon fal fa-phone"></i>
+                                    <span><a href="tel:+971 50 857 8251">+971 50 857 8251</a></span>
+                                </li> -->
+                                <li>
+                                    <i class="icon fal fa-envelope"></i>
+                                    <span><a href="mailto:uccuaecarclubs@gmail.com">uccuaecarclubs@gmail.com</a></span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; gap: 10px;">
+                                    <i class="icon fal fa-map-marker-check" style="margin-top:5px;"></i>
+                                    <div>
+                                        <span>UAE</span>
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright-wrap">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center"></div>
+                <div class="col-lg-4 text-right text-xl-right">
+                    &copy; 2026 UAE CAR CLUBS - UCC. All rights reserved.     
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+window.addEventListener("scroll", function() {
+  const section = document.querySelector(".about-section");
+  const position = section.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.3;
+
+  if(position < screenPosition) {
+    section.classList.add("active");
+  }
+});
+</script>
+            
+      <script>
+let slides = document.querySelectorAll(".slide");
+let current = 0;
+
+function autoSlide() {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+}
+
+setInterval(autoSlide, 4000); // Change slide every 4 seconds
+</script>
+
+
+<script>
+document.getElementById("uccForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Get user input values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let Message = document.getElementById("Message").value.trim();
+
+    // Create message with USER DATA
+    let message = 
+    "Hello UAE CAR CLUBS - UCC 👋\n\n" +
+    "Name: " + name + "\n" +
+    "Email: " + email + "\n" +
+    "Phone: " + phone + "\n" +
+    "Message: " + Message;
+
+    // WhatsApp link
+    let whatsappURL = "https://api.whatsapp.com/send?phone=971508578251&text=" + encodeURIComponent(message);
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+});
+</script>
+
+            
+     
+        <!-- footer-end -->
+		<!-- JS here -->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/paroller.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/js_isotope.pkgd.min.js"></script>
+        <script src="js/imagesloaded.min.js"></script>
+        <script src="js/parallax.min.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/jquery.meanmenu.min.js"></script>
+        <script src="js/parallax-scroll.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/element-in-view.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+
+
+</html>

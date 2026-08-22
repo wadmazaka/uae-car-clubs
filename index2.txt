@@ -1,0 +1,1331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init("alU0N5_7ZcdAwmPfe");</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAE CAR CLUBS — UCC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/meanmenu.css">
+  <style>
+    :root {
+      --red: #D42B2B;
+      --red-dark: #A01F1F;
+      --black: #0A0A0A;
+      --white: #FAFAF8;
+      --gray: #1A1A1A;
+      --gray-mid: #3A3A3A;
+      --text-muted: #888;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-serif: 'DM Serif Display', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--black); overflow-x: hidden; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s cubic-bezier(.25,.8,.25,1), transform 0.8s cubic-bezier(.25,.8,.25,1); }
+    .reveal.left { transform: translateX(-60px); }
+    .reveal.right { transform: translateX(60px); }
+    .reveal.scale { transform: scale(0.88); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.35s; }
+    .delay-4 { transition-delay: 0.5s; }
+
+    /* ── NAV ── */
+    .ucc-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: stretch;
+      height: 80px;
+      background: #111111;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+      transition: height 0.4s;
+    }
+    .ucc-nav.scrolled { height: 66px; }
+
+    /* Logo block — white panel on the left */
+    .ucc-nav .logo {
+      background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 28px;
+      position: relative; flex-shrink: 0;
+      clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%);
+      padding-right: 46px;
+    }
+    .ucc-nav .logo img { height: 60px; width: auto; object-fit: contain; }
+
+    /* Nav links area */
+    .ucc-nav ul {
+      list-style: none; display: flex; align-items: stretch;
+      margin: 0; padding: 0; flex: 1;
+    }
+
+    /* Each nav item is a chevron tab */
+    .ucc-nav ul li {
+      position: relative; display: flex; align-items: stretch;
+    }
+    .ucc-nav ul li a {
+      display: flex; align-items: center;
+      padding: 0 22px 0 28px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      position: relative; white-space: nowrap;
+      transition: color 0.25s, background 0.25s;
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+      margin-right: -1px;
+    }
+    .ucc-nav ul li:first-child a { padding-left: 36px; }
+
+    /* Hover state */
+    .ucc-nav ul li a:hover {
+      background: #1e1e1e;
+      color: #fff;
+    }
+
+    /* Active/current page highlight */
+    .ucc-nav ul li a.active-link {
+      background: var(--red);
+      color: #fff;
+    }
+    .ucc-nav ul li a.active-link:hover { background: var(--red-dark); }
+
+    /* Contact CTA — fully red chevron */
+    .nav-cta {
+      background: var(--red) !important;
+      color: #fff !important;
+      font-weight: 700 !important;
+    }
+    .nav-cta:hover { background: var(--red-dark) !important; color: #fff !important; }
+    .nav-cta::after { display: none !important; }
+
+    /* Hamburger for mobile */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none;
+      padding: 0 20px; align-self: center; margin-left: auto;
+    }
+    .hamburger span { display: block; width: 26px; height: 2px; background: #fff; transition: 0.3s; }
+
+    /* Mobile nav */
+    .mobile-nav {
+      display: none; position: fixed; top: 80px; left: 0; right: 0;
+      background: #111; padding: 8px 0; z-index: 999;
+      border-bottom: 3px solid var(--red);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.7); text-decoration: none;
+      padding: 14px 24px; font-size: 13px; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      border-left: 3px solid transparent;
+      transition: all 0.25s;
+    }
+    .mobile-nav a:hover { color: #fff; border-left-color: var(--red); background: rgba(255,255,255,0.04); }
+    .mobile-nav a::before { content: '›'; font-size: 18px; color: var(--red); line-height: 1; }
+
+    /* ── HERO ── */
+    .hero {
+      width: 95%; margin: 96px auto 0;
+      border-radius: 30px; overflow: hidden;
+      position: relative; height: 90vh; min-height: 500px;
+    }
+    .hero-slides { position: relative; width: 100%; height: 100%; }
+
+    /* Every slide stacked, hidden by default */
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      z-index: 0; opacity: 0;
+    }
+
+    /* Incoming: Ken Burns slow zoom */
+    .hero-slide.active {
+      opacity: 1; z-index: 2;
+      animation: heroKenBurns 7s ease-in-out forwards;
+    }
+    @keyframes heroKenBurns {
+      from { transform: scale(1.1); }
+      to   { transform: scale(1.0); }
+    }
+
+    /* Outgoing: sweep left wipe */
+    .hero-slide.leaving {
+      opacity: 1; z-index: 3;
+      animation: heroWipe 1s cubic-bezier(.77,0,.18,1) forwards;
+    }
+    @keyframes heroWipe {
+      from { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+      to   { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+    }
+
+    /* Dark overlay */
+    .hero-slide::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(120deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.22) 60%, rgba(0,0,0,0.08) 100%);
+    }
+
+    /* Content sits on top */
+    .hero-content {
+      position: absolute; top: 50%; left: 8%;
+      transform: translateY(-50%);
+      z-index: 4; max-width: 620px;
+    }
+
+    /* Tag line animates in */
+    .hero-tag {
+      display: block; color: #fff; font-size: 13px; letter-spacing: 3px;
+      text-transform: uppercase; margin-bottom: 16px;
+      font-family: var(--font-body); font-weight: 400;
+      opacity: 0; transform: translateY(16px);
+    }
+    .hero-slide.active .hero-tag {
+      animation: heroUp 0.7s 0.4s cubic-bezier(.25,.8,.25,1) forwards;
+    }
+
+    /* Title animates in */
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 6vw, 88px);
+      line-height: 1; color: #fff; letter-spacing: 2px; margin-bottom: 18px;
+      opacity: 0; transform: translateY(28px);
+    }
+    .hero-slide.active .hero-title {
+      animation: heroUp 0.8s 0.6s cubic-bezier(.25,.8,.25,1) forwards;
+    }
+
+    /* Subtitle animates in */
+    .hero-sub {
+      color: rgba(255,255,255,0.8); font-size: 16px; line-height: 1.7;
+      max-width: 500px; margin-bottom: 28px;
+      opacity: 0; transform: translateY(20px);
+    }
+    .hero-slide.active .hero-sub {
+      animation: heroUp 0.8s 0.78s cubic-bezier(.25,.8,.25,1) forwards;
+    }
+
+    /* Button animates in */
+    .hero-btn {
+      display: inline-block; padding: 13px 30px;
+      border: 2px solid rgba(255,255,255,0.7); border-radius: 30px;
+      color: #fff; text-decoration: none; font-size: 14px; letter-spacing: 1px;
+      font-family: var(--font-body); font-weight: 500;
+      transition: background 0.35s, color 0.35s, border-color 0.35s;
+      opacity: 0; transform: translateY(16px);
+    }
+    .hero-slide.active .hero-btn {
+      animation: heroUp 0.7s 0.95s cubic-bezier(.25,.8,.25,1) forwards;
+    }
+    .hero-btn:hover { background: #fff; color: #000; border-color: #fff; }
+
+    @keyframes heroUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Red side accent line that wipes in */
+    .hero-slide::after {
+      content: ''; position: absolute; left: 5%; top: 20%; bottom: 20%;
+      width: 3px; background: var(--red); z-index: 4;
+      transform: scaleY(0); transform-origin: top;
+    }
+    .hero-slide.active::after {
+      animation: heroLine 0.8s 0.3s cubic-bezier(.77,0,.18,1) forwards;
+    }
+    @keyframes heroLine {
+      to { transform: scaleY(1); }
+    }
+
+    /* Indicators */
+    .hero-indicators {
+      position: absolute; bottom: 28px; right: 6%; z-index: 10;
+      display: flex; gap: 10px;
+    }
+    .hero-dot {
+      width: 28px; height: 3px; background: rgba(255,255,255,0.3);
+      cursor: pointer; border: none; border-radius: 2px; transition: 0.4s;
+    }
+    .hero-dot.active { background: var(--red); width: 52px; }
+
+    /* Progress bar along bottom of hero */
+    .hero-progress {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: rgba(255,255,255,0.1); z-index: 10;
+    }
+    .hero-progress-bar { height: 100%; width: 0; background: var(--red); }
+
+    .hero-scroll-hint { display: none; }
+    .scroll-line { display: none; }
+
+    /* ── MARQUEE STRIP ── */
+    .marquee-strip {
+      background: #111; border-top: 1px solid rgba(212,43,43,0.3); border-bottom: 1px solid rgba(212,43,43,0.3); overflow: hidden; padding: 12px 0;
+      white-space: nowrap;
+    }
+    .marquee-track {
+      display: inline-flex; gap: 0;
+      animation: marqueeAnim 22s linear infinite;
+    }
+    .marquee-item {
+      font-family: var(--font-display); font-size: 18px; letter-spacing: 2px;
+      color: var(--red); padding: 0 28px; display: flex; align-items: center; gap: 10px;
+    }
+    .marquee-item::after { content: '●'; font-size: 8px; opacity: 0.4; color: rgba(255,255,255,0.3); }
+    @keyframes marqueeAnim { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── SECTION BASE ── */
+    .section-label {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--red); font-weight: 500; margin-bottom: 12px; display: block;
+    }
+    .section-h {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 0.95; letter-spacing: 1px;
+    }
+    .section-pad { padding: 120px 8%; }
+
+    /* ── ABOUT ── */
+    .about-section { background: var(--black); color: #fff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+    /* ── Image with cinematic effects ── */
+    .about-img-wrap {
+      position: relative; overflow: hidden; border-radius: 20px;
+    }
+    /* Ken Burns on the photo */
+    .about-img-wrap img {
+      width: 100%; height: 580px; object-fit: cover; display: block;
+      transform: scale(1.06);
+      transition: transform 7s cubic-bezier(.25,.8,.25,1);
+      filter: brightness(0.88) saturate(1.1);
+    }
+    .about-img-wrap:hover img {
+      transform: scale(1.0);
+      filter: brightness(1) saturate(1.2);
+    }
+    /* Red sweep overlay on hover */
+    .about-img-wrap::after {
+      content: '';
+      position: absolute; inset: 0; border-radius: 20px;
+      background: linear-gradient(135deg, rgba(212,43,43,0.28) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.6s;
+      pointer-events: none;
+    }
+    .about-img-wrap:hover::after { opacity: 1; }
+    /* Red left border wipe */
+    .about-img-wrap::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px; background: var(--red); z-index: 2;
+      transform: scaleY(0); transform-origin: bottom;
+      transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+    }
+    .about-img-wrap:hover::before { transform: scaleY(1); }
+
+    .about-img-accent {
+      position: absolute; bottom: -20px; right: -20px;
+      width: 120px; height: 120px;
+      border: 2px solid var(--red); z-index: -1; border-radius: 8px;
+      transition: width 0.4s, height 0.4s;
+    }
+    .about-img-wrap:hover ~ .about-img-accent { width: 140px; height: 140px; }
+
+    .about-year-badge {
+      position: absolute; top: 28px; left: -28px; z-index: 3;
+      background: var(--red); color: #fff;
+      padding: 18px 22px; text-align: center;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(212,43,43,0.5);
+    }
+    .about-year-badge .yr { font-family: var(--font-display); font-size: 42px; line-height: 1; }
+    .about-year-badge .yl { font-size: 11px; letter-spacing: 2px; }
+
+    /* ── About text card ── */
+    .about-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-left: 3px solid var(--red);
+      border-radius: 12px;
+      padding: 28px 30px;
+      margin: 24px 0 32px;
+      position: relative; overflow: hidden;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    .about-card::before {
+      content: '"';
+      position: absolute; top: -10px; right: 20px;
+      font-family: var(--font-serif); font-size: 100px;
+      color: rgba(212,43,43,0.1); line-height: 1;
+      pointer-events: none;
+    }
+    .about-card:hover {
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .about-card p {
+      color: rgba(255,255,255,0.7); font-size: 15px; line-height: 1.85;
+      margin: 0 0 12px; position: relative; z-index: 1;
+    }
+    .about-card p:last-child { margin: 0; }
+
+    .about-text { color: rgba(255,255,255,0.65); line-height: 1.8; margin: 20px 0 32px; font-size: 15px; }
+    .about-stats { display: flex; gap: 40px; margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .stat-n { font-family: var(--font-display); font-size: 56px; color: var(--red); line-height: 1; }
+    .stat-l { font-size: 12px; letter-spacing: 1.5px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 4px; }
+
+    /* ── VISION MISSION ── */
+    .vm-section { background: var(--white); }
+    .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 60px; }
+    .vm-card {
+      padding: 56px 48px; background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      position: relative; overflow: hidden;
+      transition: box-shadow 0.4s;
+    }
+    .vm-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--red);
+      transform: scaleX(0); transform-origin: left; transition: transform 0.5s;
+    }
+    .vm-card:hover::before { transform: scaleX(1); }
+    .vm-card:hover { box-shadow: 0 32px 80px rgba(0,0,0,0.08); }
+    .vm-icon { font-size: 28px; color: var(--red); margin-bottom: 24px; }
+    .vm-card h3 { font-family: var(--font-display); font-size: 36px; letter-spacing: 1px; margin-bottom: 16px; }
+    .vm-card p { color: #555; line-height: 1.8; font-size: 15px; }
+
+    /* ── CORE VALUES ── */
+    .values-section { background: var(--black); color: #fff; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 60px; }
+    .val-card {
+      padding: 44px 36px; background: var(--gray);
+      border: 1px solid rgba(255,255,255,0.04);
+      position: relative; overflow: hidden;
+      transition: background 0.4s;
+    }
+    .val-card::after {
+      content: attr(data-n);
+      position: absolute; bottom: -10px; right: 16px;
+      font-family: var(--font-display); font-size: 100px;
+      color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none;
+    }
+    .val-card:hover { background: #202020; transform: translateY(-10px) rotate(-1deg) scale(1.03); box-shadow: 0 24px 48px rgba(0,0,0,0.5); }
+    .val-card { transition: background 0.4s, transform 0.4s cubic-bezier(.34,1.56,.64,1), box-shadow 0.4s; }
+    .val-line { width: 32px; height: 2px; background: var(--red); margin-bottom: 24px; transition: width 0.4s; }
+    .val-card:hover .val-line { width: 64px; }
+    .val-card h3 { font-family: var(--font-serif); font-size: 20px; margin-bottom: 12px; color: #fff; }
+    .val-card p { color: rgba(255,255,255,0.45); font-size: 14px; line-height: 1.8; }
+
+    /* ── ACHIEVEMENTS ── */
+    .achieve-section { background: #F2F0ED; }
+    .achieve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; padding: 16px; }
+    .achieve-card {
+      background: #fff; overflow: visible;
+      border: 1px solid rgba(0,0,0,0.06);
+      position: relative;
+      aspect-ratio: 4/5;
+      transition: transform 0.45s cubic-bezier(.34,1.56,.64,1), box-shadow 0.45s ease;
+      z-index: 1;
+    }
+    .achieve-card:hover {
+      transform: scale(1.1) translateY(-10px);
+      box-shadow: 0 32px 64px rgba(0,0,0,0.25), 0 0 0 3px #D42B2B;
+      z-index: 10;
+    }
+    .achieve-card img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 16px; }
+    .achieve-card-overlay {
+      position: absolute; inset: 0; background: rgba(212,43,43,0); 
+      display: flex; align-items: flex-end;
+      padding: 24px; transition: background 0.4s;
+    }
+    .achieve-card:hover .achieve-card-overlay { background: rgba(212,43,43,0.08); }
+
+    /* ── GALLERY / CATEGORIES ── */
+    .gallery-section { background: var(--black); color: #fff; overflow: hidden; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 60px; }
+
+    .gallery-item {
+      position: relative; overflow: hidden; border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* Ken Burns zoom on the image itself */
+    .gallery-item img {
+      width: 100%; height: 320px; object-fit: cover; display: block;
+      transition: transform 6s cubic-bezier(.25,.8,.25,1);
+      transform: scale(1.08);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.0);
+    }
+
+    /* Wipe reveal overlay — diagonal clip-path on hover */
+    .gallery-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 70%, rgba(0,0,0,0.06) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 28px;
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+      transition: clip-path 0.65s cubic-bezier(.77,0,.18,1);
+    }
+    .gallery-item:hover .gallery-item-overlay {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Red tag slides up */
+    .gallery-item-tag {
+      display: inline-block; background: var(--red); color: #fff;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      padding: 4px 12px; margin-bottom: 10px; font-weight: 500;
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.4s 0.2s, transform 0.4s 0.2s;
+    }
+    .gallery-item:hover .gallery-item-tag {
+      opacity: 1; transform: translateY(0);
+    }
+
+    /* Title slides up */
+    .gallery-item-label {
+      color: #fff; font-family: var(--font-display);
+      font-size: 32px; letter-spacing: 2px; line-height: 1;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.45s 0.32s, transform 0.45s 0.32s;
+    }
+    .gallery-item:hover .gallery-item-label {
+      opacity: 1; transform: translateY(0);
+    }
+
+    /* Red border glow on hover */
+    .gallery-item::after {
+      content: ''; position: absolute; inset: 0; border-radius: 20px;
+      box-shadow: inset 0 0 0 0px var(--red);
+      transition: box-shadow 0.4s;
+      pointer-events: none;
+    }
+    .gallery-item:hover::after {
+      box-shadow: inset 0 0 0 3px var(--red);
+    }
+
+    /* Number watermark */
+    .gallery-item-num {
+      position: absolute; top: 16px; right: 20px;
+      font-family: var(--font-display); font-size: 64px;
+      color: rgba(255,255,255,0.08); line-height: 1; pointer-events: none;
+      transition: color 0.4s;
+    }
+    .gallery-item:hover .gallery-item-num {
+      color: rgba(255,255,255,0.14);
+    }
+
+    /* ── COMMUNITY ── */
+    .community-section { background: var(--black); }
+    .community-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 60px; }
+    .comm-item { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+    .comm-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+    .comm-item:hover img { transform: scale(1.08); }
+    .comm-item::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(212,43,43,0); transition: background 0.4s;
+    }
+    .comm-item:hover::after { background: rgba(212,43,43,0.15); }
+
+    /* ── UCC CLUBS ── */
+    .clubs-section { background: var(--black); padding: 100px 8%; }
+    .clubs-img-wrap {
+      max-width: 760px; margin: 52px auto 0;
+      border-radius: 24px; overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+      transition: transform 0.5s cubic-bezier(.25,.8,.25,1), box-shadow 0.5s;
+      position: relative;
+    }
+    .clubs-img-wrap::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      border-radius: 24px;
+      box-shadow: inset 0 0 0 0px var(--red);
+      transition: box-shadow 0.4s;
+      pointer-events: none;
+    }
+    .clubs-img-wrap:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 48px 100px rgba(0,0,0,0.8); }
+    .clubs-img-wrap:hover::before { box-shadow: inset 0 0 0 3px var(--red); }
+    .clubs-img-wrap img { width: 100%; display: block; }
+
+    /* ── TEAM ── */
+    .team-section { background: var(--black); padding: 80px 8%; }
+    .team-img-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+      transition: transform 0.5s cubic-bezier(.25,.8,.25,1), box-shadow 0.5s;
+    }
+    .team-img-wrap:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 48px 100px rgba(0,0,0,0.7);
+    }
+    .team-img-wrap img { width: 100%; display: block; }
+
+    /* ── SOCIAL ── */
+    .social-section {
+      padding: 120px 8%;
+      background: var(--black);
+      background-image: radial-gradient(ellipse at 20% 50%, rgba(212,43,43,0.12) 0%, transparent 60%);
+    }
+    .social-cards { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 52px; }
+    .soc-card {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 24px; border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      text-decoration: none; color: #fff;
+      transition: all 0.35s; min-width: 220px;
+      backdrop-filter: blur(8px);
+    }
+    .soc-card:hover { border-color: var(--red); background: rgba(212,43,43,0.1); color: #fff; transform: translateY(-4px); }
+    .soc-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .soc-card span { font-size: 13px; font-weight: 500; letter-spacing: 0.5px; }
+
+    /* ── CONTACT ── */
+    .contact-section { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; margin-top: 60px; }
+    .contact-form-wrap {
+      background: var(--black); color: #fff; padding: 52px 48px;
+    }
+    .contact-form-wrap h3 { font-family: var(--font-display); font-size: 38px; letter-spacing: 1px; margin-bottom: 32px; }
+    .cf-input {
+      width: 100%; background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 0;
+      color: #fff; padding: 14px 16px; font-family: var(--font-body);
+      font-size: 14px; margin-bottom: 16px; outline: none; transition: border-color 0.3s;
+    }
+    .cf-input:focus { border-color: var(--red); }
+    .cf-input::placeholder { color: rgba(255,255,255,0.3); }
+    .cf-btn {
+      width: 100%; padding: 16px; background: var(--red); border: none;
+      color: #fff; font-family: var(--font-body); font-size: 12px;
+      letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer;
+      transition: background 0.3s; font-weight: 500;
+    }
+    .cf-btn:hover { background: var(--red-dark); }
+    .contact-info-col { padding-top: 16px; }
+    .contact-info-col h3 { font-family: var(--font-display); font-size: 48px; line-height: 0.95; letter-spacing: 1px; margin-bottom: 20px; }
+    .contact-info-col p { color: #666; line-height: 1.8; margin-bottom: 40px; }
+    .ci-item { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .ci-dot { width: 40px; height: 40px; background: var(--red); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; flex-shrink: 0; }
+    .ci-text a { color: inherit; text-decoration: none; }
+    .ci-text a:hover { color: var(--red); }
+
+    /* ── FOOTER ── */
+    .ucc-footer { background: #060606; color: rgba(255,255,255,0.5); padding: 80px 8% 40px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo img { height: 60px; margin-bottom: 20px; }
+    .footer-about { font-size: 13px; line-height: 1.8; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 24px; }
+    .footer-socials a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; transition: all 0.3s; }
+    .footer-socials a:hover { border-color: var(--red); color: var(--red); }
+    .footer-h { font-family: var(--font-body); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 20px; font-weight: 500; }
+    .footer-links li { list-style: none; margin-bottom: 10px; }
+    .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--red); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; font-size: 12px; }
+
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 991px) {
+      .ucc-nav ul { display: none; }
+      .hamburger { display: flex; }
+      .about-grid, .vm-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .achieve-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .about-year-badge { left: 16px; }
+      .contact-form-wrap { padding: 40px 28px; }
+      .section-pad { padding: 80px 6%; }
+    }
+    @media (max-width: 640px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .achieve-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .community-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero { width: 96%; margin-top: 80px; border-radius: 20px; }
+      .hero-content { left: 6%; right: 6%; }
+      .about-stats { flex-wrap: wrap; gap: 24px; }
+      .section-pad { padding: 64px 5%; }
+    }
+
+    /* ── UPCOMING EVENTS CARD ── */
+    .events-section {
+      background: var(--black);
+      padding: 0 8% 100px;
+    }
+    .events-card {
+      position: relative; border-radius: 24px; overflow: hidden;
+      min-height: 480px; display: flex; align-items: stretch;
+    }
+    /* Background image layer */
+    .events-card-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+      transform: scale(1.04);
+      transition: transform 7s cubic-bezier(.25,.8,.25,1);
+      filter: brightness(0.45) saturate(1.2);
+    }
+    .events-card:hover .events-card-bg {
+      transform: scale(1.0);
+      filter: brightness(0.35) saturate(1.3);
+    }
+    /* Dark gradient overlay */
+    .events-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(110deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 55%, rgba(212,43,43,0.18) 100%);
+    }
+    /* Red animated side accent */
+    .events-card::before {
+      content: ''; position: absolute; left: 0; top: 10%; bottom: 10%;
+      width: 4px; background: var(--red); z-index: 3;
+      transform: scaleY(0); transform-origin: bottom;
+      transition: transform 0.8s cubic-bezier(.77,0,.18,1);
+    }
+    .events-card:hover::before { transform: scaleY(1); }
+    /* Content */
+    .events-card-content {
+      position: relative; z-index: 4;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 60px 64px; flex: 1;
+    }
+    .events-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-bottom: 20px;
+    }
+    .events-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--red);
+      animation: pulseDot 1.8s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%       { transform: scale(1.6); opacity: 0.5; }
+    }
+    .events-eyebrow span {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); font-weight: 500;
+    }
+    .events-card-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 5vw, 76px);
+      color: #fff; line-height: 0.95; letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .events-card-content h2 span { color: var(--red); }
+    .events-card-content p {
+      color: rgba(255,255,255,0.65); font-size: 16px;
+      line-height: 1.75; max-width: 460px; margin-bottom: 36px;
+    }
+    .events-register-btn {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--red); color: #fff; text-decoration: none;
+      padding: 16px 32px; border-radius: 4px;
+      font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+      font-weight: 500; font-family: var(--font-body);
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      align-self: flex-start;
+    }
+    .events-register-btn:hover {
+      background: var(--red-dark); color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(212,43,43,0.45);
+    }
+    .events-register-btn i { font-size: 16px; }
+    /* Right side badges */
+    .events-badges {
+      position: relative; z-index: 4;
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 20px; padding: 60px 64px 60px 0; min-width: 280px;
+    }
+    .events-badge {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 20px 24px;
+      backdrop-filter: blur(10px);
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+    }
+    .events-badge:hover {
+      background: rgba(212,43,43,0.15);
+      border-color: rgba(212,43,43,0.4);
+      transform: translateX(-6px);
+    }
+    .events-badge-icon { font-size: 22px; margin-bottom: 8px; }
+    .events-badge-label {
+      font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,0.4);
+      text-transform: uppercase; margin-bottom: 4px;
+    }
+    .events-badge-val {
+      font-family: var(--font-display); font-size: 22px;
+      color: #fff; letter-spacing: 1px;
+    }
+    @media (max-width: 768px) {
+      .events-card { flex-direction: column; }
+      .events-card-content { padding: 48px 32px 24px; }
+      .events-badges { flex-direction: row; flex-wrap: wrap; padding: 0 32px 48px; gap: 12px; min-width: unset; }
+      .events-badge { flex: 1; min-width: 120px; }
+      .events-badge:hover { transform: translateY(-4px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="ucc-nav" id="main-nav">
+  <div class="logo"><a href="#home"><img src="images/logo.png" alt="UCC Logo"></a></div>
+  <ul>
+    <li><a href="#home" class="active-link">Home</a></li>
+    <li><a href="#about">About UUC</a></li>
+    <li><a href="#gallery">Categories</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#ucc-clubs">UCC Clubs</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#social">Social</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#home">Home</a>
+  <a href="#about">About UUC</a>
+  <a href="#gallery">Categories</a>
+  <a href="#community">Community</a>
+  <a href="#ucc-clubs">UCC Clubs</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#social">Social</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image: url('images/community11.png');">
+      <div class="hero-content">
+        <span class="hero-tag">Uniting UAE Car &amp; Bike Enthusiasts</span>
+        <h1 class="hero-title">UAE CAR CLUBS - UCC</h1>
+        <p class="hero-sub">Join the UAE's largest automotive community and experience thrilling events, meetups, and motor shows.</p>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('images/community10.png');">
+      <div class="hero-content">
+        <span class="hero-tag">Exclusive Car &amp; Bike Events</span>
+        <h1 class="hero-title">MEET, DRIVE, CELEBRATE</h1>
+        <p class="hero-sub">From motor shows to track days, we create unforgettable experiences for car and bike lovers across the UAE.</p>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('images/community12.png');">
+      <div class="hero-content">
+        <span class="hero-tag">Passion &bull; Community &bull; Innovation</span>
+        <h1 class="hero-title">DRIVE THE UAE AUTOMOTIVE CULTURE</h1>
+        <p class="hero-sub">Connect with enthusiasts, showcase your ride, and be part of a growing automotive family with UCC.</p>
+        <a href="#contact" class="hero-btn">Get In Touch</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-indicators">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+  </div>
+  <div class="hero-progress"><div class="hero-progress-bar" id="heroBar"></div></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="mtrack">
+    <span class="marquee-item">185+ Events</span>
+    <span class="marquee-item">30+ Nationalities</span>
+    <span class="marquee-item">Motor Shows</span>
+    <span class="marquee-item">Track Days</span>
+    <span class="marquee-item">Car Meets</span>
+    <span class="marquee-item">UAE Community</span>
+    <span class="marquee-item">Bikes & Cars</span>
+    <span class="marquee-item">Since 2019</span>
+    <span class="marquee-item">185+ Events</span>
+    <span class="marquee-item">30+ Nationalities</span>
+    <span class="marquee-item">Motor Shows</span>
+    <span class="marquee-item">Track Days</span>
+    <span class="marquee-item">Car Meets</span>
+    <span class="marquee-item">UAE Community</span>
+    <span class="marquee-item">Bikes & Cars</span>
+    <span class="marquee-item">Since 2019</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section section-pad reveal" id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap reveal left">
+      <div class="about-year-badge">
+        <div class="yr">2019</div>
+        <div class="yl">Founded</div>
+      </div>
+      <img src="images/community9.png" alt="UCC Cars">
+      <div class="about-img-accent"></div>
+    </div>
+    <div class="reveal right">
+      <span class="section-label">About UCC</span>
+      <h2 class="section-h" style="color:#fff;">UAE CAR CLUBS</h2>
+      <p style="color:rgba(255,255,255,0.45); font-family:'DM Serif Display', serif; font-style:italic; font-size:22px; margin:10px 0 24px;">مجموعة أندية السيارات في الامارات 🇦🇪</p>
+
+      <div class="about-card reveal delay-2">
+        <p>Established in April 2019, UAE CAR CLUBS (UCC) brings together car and bike enthusiasts under one powerful community. Our mission is to promote the passion for automotive culture across the UAE through exciting motor events, social gatherings, and unforgettable experiences.</p>
+        <p>We focus on building a positive, friendly, and diverse environment where enthusiasts can connect, share their passion, and grow together.</p>
+      </div>
+
+      <div class="about-stats">
+        <div class="reveal delay-1">
+          <div class="stat-n">185+</div>
+          <div class="stat-l">Events Held</div>
+        </div>
+        <div class="reveal delay-2">
+          <div class="stat-n">30+</div>
+          <div class="stat-l">Nationalities</div>
+        </div>
+        <div class="reveal delay-3">
+          <div class="stat-n">5+</div>
+          <div class="stat-l">Years Strong</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="vm-section section-pad">
+  <div style="text-align:center;">
+    <span class="section-label reveal">Our Purpose</span>
+    <h2 class="section-h reveal delay-1">Vision &amp; Mission</h2>
+  </div>
+  <div class="vm-grid">
+    <div class="vm-card reveal left delay-2">
+      <div class="vm-icon"><i class="fas fa-eye"></i></div>
+      <h3>Our Vision</h3>
+      <p>To be the UAE's most influential and innovative automotive community, uniting car enthusiasts of all backgrounds while setting the benchmark for world-class motor events across the region.</p>
+    </div>
+    <div class="vm-card reveal right delay-3">
+      <div class="vm-icon"><i class="fas fa-rocket"></i></div>
+      <h3>Our Mission</h3>
+      <p>To create exceptional automotive experiences by organizing high-quality, safe, and engaging motor events that bring together a diverse community of enthusiasts — fostering passion, connection, and growth within the UAE's automotive culture.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="values-section section-pad">
+  <div style="text-align:center;">
+    <span class="section-label reveal">What Drives Us</span>
+    <h2 class="section-h reveal delay-1" style="color:#fff;">Core Values</h2>
+  </div>
+  <div class="values-grid">
+    <div class="val-card reveal delay-1" data-n="01"><div class="val-line"></div><h3>Passion for Automotive</h3><p>We live and breathe cars, driven by a deep passion to celebrate and grow the automotive lifestyle in the UAE.</p></div>
+    <div class="val-card reveal delay-2" data-n="02"><div class="val-line"></div><h3>Community &amp; Inclusivity</h3><p>With members from over 30 nationalities, we embrace diversity and create a welcoming environment for all enthusiasts.</p></div>
+    <div class="val-card reveal delay-3" data-n="03"><div class="val-line"></div><h3>Excellence in Execution</h3><p>With 185+ successful events, we deliver high-quality, well-organized, and unforgettable automotive experiences.</p></div>
+    <div class="val-card reveal delay-1" data-n="04"><div class="val-line"></div><h3>Safety First</h3><p>We prioritize the safety and well-being of our members, participants, and audiences in every event we produce.</p></div>
+    <div class="val-card reveal delay-2" data-n="05"><div class="val-line"></div><h3>Innovation &amp; Growth</h3><p>We continuously evolve, bringing fresh ideas and new experiences to stay ahead in the UAE automotive scene.</p></div>
+    <div class="val-card reveal delay-3" data-n="06"><div class="val-line"></div><h3>Integrity &amp; Professionalism</h3><p>We operate with transparency, reliability, and respect in all our partnerships and engagements.</p></div>
+  </div>
+</section>
+
+<!-- CATEGORIES / GALLERY -->
+<section class="gallery-section section-pad" id="gallery">
+  <span class="section-label reveal">What We Cover</span>
+  <h2 class="section-h reveal delay-1" style="color:#fff;">Categories</h2>
+  <div class="gallery-grid">
+
+    <div class="gallery-item reveal scale delay-1">
+      <span class="gallery-item-num">01</span>
+      <img src="images/group.png" alt="Car Shows">
+      <div class="gallery-item-overlay">
+        <span class="gallery-item-tag">UCC Events</span>
+        <span class="gallery-item-label">Car Shows</span>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal scale delay-2">
+      <span class="gallery-item-num">02</span>
+      <img src="images/group1.jpeg" alt="Bike Meets">
+      <div class="gallery-item-overlay">
+        <span class="gallery-item-tag">UCC Events</span>
+        <span class="gallery-item-label">Bike Meets</span>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal scale delay-3">
+      <span class="gallery-item-num">03</span>
+      <img src="images/group3.png" alt="Track Events">
+      <div class="gallery-item-overlay">
+        <span class="gallery-item-tag">UCC Events</span>
+        <span class="gallery-item-label">Track Events</span>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal scale delay-4">
+      <span class="gallery-item-num">04</span>
+      <img src="images/group4.png" alt="Mall Displays">
+      <div class="gallery-item-overlay">
+        <span class="gallery-item-tag">UCC Events</span>
+        <span class="gallery-item-label">Mall Displays</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community-section section-pad" id="community" style="padding-top:0;">
+  <span class="section-label reveal" style="color:#fff; opacity:0.5;">Our Members</span>
+  <h2 class="section-h reveal delay-1" style="color:#fff; margin-bottom: 60px;">Our Community</h2>
+  <div class="community-grid">
+    <div class="comm-item reveal scale delay-1"><img src="images/community1.jpeg" alt=""></div>
+    <div class="comm-item reveal scale delay-2"><img src="images/community2.jpeg" alt=""></div>
+    <div class="comm-item reveal scale delay-3"><img src="images/community3.jpeg" alt=""></div>
+    <div class="comm-item reveal scale delay-4"><img src="images/community4.jpeg" alt=""></div>
+    <div class="comm-item reveal scale delay-1"><img src="images/community5.jpeg" alt=""></div>
+    <div class="comm-item reveal scale delay-2"><img src="images/community6.jpeg" alt=""></div>
+    <div class="comm-item reveal scale delay-3"><img src="images/community9.jpeg" alt=""></div>
+    <div class="comm-item reveal scale delay-4"><img src="images/community11.jpeg" alt=""></div>
+  </div>
+</section>
+
+<!-- UCC CLUBS -->
+<section class="clubs-section" id="ucc-clubs">
+  <span class="section-label reveal">Our Network</span>
+  <h2 class="section-h reveal delay-1" style="color:#fff;">UCC Clubs</h2>
+  <div class="clubs-img-wrap reveal scale delay-2">
+    <img src="images/uccCLUBS.jpeg" alt="UCC Clubs — One Team">
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="achieve-section section-pad" id="achievements">
+  <span class="section-label reveal">Milestones</span>
+  <h2 class="section-h reveal delay-1">Achievements &amp; Awards</h2>
+  <div class="achieve-grid">
+    <div class="achieve-card reveal scale delay-1"><img src="images/about.jpeg" alt="Achievement"><div class="achieve-card-overlay"></div></div>
+    <div class="achieve-card reveal scale delay-2"><img src="images/about2.jpeg" alt="Achievement"><div class="achieve-card-overlay"></div></div>
+    <div class="achieve-card reveal scale delay-3"><img src="images/image1.png" alt="Achievement"><div class="achieve-card-overlay"></div></div>
+    <div class="achieve-card reveal scale delay-1"><img src="images/image2.png" alt="Achievement"><div class="achieve-card-overlay"></div></div>
+    <div class="achieve-card reveal scale delay-2"><img src="images/image3.png" alt="Achievement"><div class="achieve-card-overlay"></div></div>
+    <div class="achieve-card reveal scale delay-3"><img src="images/image4-new.jpeg" alt="Achievement"><div class="achieve-card-overlay"></div></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="team-img-wrap reveal scale">
+    <img src="images/UCCMANAGMENTTEAM.jpeg" alt="UCC Management Team">
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social-section" id="social">
+  <span class="section-label reveal">Stay Connected</span>
+  <h2 class="section-h reveal delay-1" style="color:#fff;">Follow UCC</h2>
+  <div class="social-cards">
+    <a href="https://www.facebook.com/UCC-107931234694300/" target="_blank" class="soc-card reveal delay-1">
+      <div class="soc-icon" style="background:#1877F2;"><i class="fab fa-facebook-f"></i></div>
+      <span>UCC on Facebook</span>
+    </a>
+    <a href="https://instagram.com/ucc.uae?igshid=16ryj4t4civhw" target="_blank" class="soc-card reveal delay-2">
+      <div class="soc-icon" style="background:#C13584;"><i class="fab fa-instagram"></i></div>
+      <span>@ucc.uae</span>
+    </a>
+    <a href="https://t.me/uccuae" target="_blank" class="soc-card reveal delay-3">
+      <div class="soc-icon" style="background:#0088CC;"><i class="fab fa-telegram-plane"></i></div>
+      <span>Telegram: uccuae</span>
+    </a>
+    <a href="https://youtube.com/channel/UC5Ag-zb1wkDT5uEbrMq_hzg" target="_blank" class="soc-card reveal delay-1">
+      <div class="soc-icon" style="background:#FF0000;"><i class="fab fa-youtube"></i></div>
+      <span>YouTube Channel</span>
+    </a>
+    <a href="/cdn-cgi/l/email-protection#99ccfafaecf8fcfaf8ebfaf5ecfbead9fef4f8f0f5b7faf6f4" target="_blank" class="soc-card reveal delay-2">
+      <div class="soc-icon" style="background:#2A49A0;"><i class="fas fa-envelope"></i></div>
+      <span><span class="__cf_email__" data-cfemail="10457373657175737162737c65726350777d71797c3e737f7d">[email&#160;protected]</span></span>
+    </a>
+    <a href="https://www.uaecarclubs.com" target="_blank" class="soc-card reveal delay-3">
+      <div class="soc-icon" style="background:#333;"><i class="fas fa-globe"></i></div>
+      <span>www.uaecarclubs.com</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- UPCOMING EVENTS -->
+<section class="events-section" id="events">
+  <div class="events-card reveal scale">
+
+    <div class="events-card-bg"></div>
+    <div class="events-card-overlay"></div>
+
+    <!-- Left content -->
+    <div class="events-card-content">
+      <div class="events-eyebrow">
+        <div class="events-dot"></div>
+        <span>Now Open for Registration</span>
+      </div>
+      <h2>UPCOMING<br><span>MOTOR</span><br>EVENTS</h2>
+      <p>Don't miss the UAE's most thrilling automotive gatherings. Car shows, bike meets, track days and mall displays — all organized by UCC. Secure your spot today.</p>
+      <a href="#contact" class="events-register-btn">
+        <i class="fas fa-flag-checkered"></i>
+        Register Now
+      </a>
+    </div>
+
+    <!-- Right badges -->
+    <div class="events-badges">
+      <div class="events-badge reveal delay-1">
+        <div class="events-badge-icon">🏎️</div>
+        <div class="events-badge-label">Car Shows</div>
+        <div class="events-badge-val">Monthly Events</div>
+      </div>
+      <div class="events-badge reveal delay-2">
+        <div class="events-badge-icon">🏍️</div>
+        <div class="events-badge-label">Bike Meets</div>
+        <div class="events-badge-val">UAE Wide</div>
+      </div>
+      <div class="events-badge reveal delay-3">
+        <div class="events-badge-icon">🏁</div>
+        <div class="events-badge-label">Track Days</div>
+        <div class="events-badge-val">Pro & Amateur</div>
+      </div>
+      <div class="events-badge reveal delay-4">
+        <div class="events-badge-icon">🛍️</div>
+        <div class="events-badge-label">Mall Displays</div>
+        <div class="events-badge-val">All Emirates</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section section-pad" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info-col reveal left">
+      <span class="section-label">Get In Touch</span>
+      <h3 class="section-h">Let's Connect</h3>
+      <p style="color:#666; margin-top:20px; line-height:1.8;">For events, collaborations, media partnerships, or any enquiries — we're always happy to hear from you.</p>
+      <div class="ci-item reveal delay-1">
+        <div class="ci-dot"><i class="fas fa-envelope"></i></div>
+        <div class="ci-text"><a href="/cdn-cgi/l/email-protection#7d281e1e081c181e1c0f1e11081f0e3d1a101c1411531e1210"><span class="__cf_email__" data-cfemail="ecb98f8f998d898f8d9e8f80998e9fac8b818d8580c28f8381">[email&#160;protected]</span></a></div>
+      </div>
+      <div class="ci-item reveal delay-2">
+        <div class="ci-dot"><i class="fab fa-whatsapp"></i></div>
+        <div class="ci-text"><a href="https://api.whatsapp.com/send?phone=971508578251" target="_blank">+971 50 857 8251</a></div>
+      </div>
+      <div class="ci-item reveal delay-3">
+        <div class="ci-dot"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="ci-text">United Arab Emirates</div>
+      </div>
+    </div>
+    <div class="contact-form-wrap reveal right">
+      <h3>Send Enquiry</h3>
+      <form id="uccForm">
+        <input class="cf-input" type="text" id="name" placeholder="Your Name" required>
+        <input class="cf-input" type="email" id="email" placeholder="Your Email" required>
+        <input class="cf-input" type="text" id="phone" placeholder="Your Phone Number" required>
+        <input class="cf-input" type="text" id="Message" placeholder="Your Message" required>
+        <button class="cf-btn" type="submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ucc-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><img src="images/logo.png" alt="UCC Logo"></div>
+      <p class="footer-about">UAE CAR CLUBS (UCC) was established in April 2019 to unite car and bike enthusiasts across the UAE. Passion, community, and innovation drive everything we do.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/UCC-107931234694300/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/ucc.uae?igshid=16ryj4t4civhw"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/channel/UC5Ag-zb1wkDT5uEbrMq_hzg"><i class="fab fa-youtube"></i></a>
+        <a href="https://t.me/uccuae"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-h">Our Activities</p>
+      <ul class="footer-links">
+        <li><a href="#">Motor Events Organizer</a></li>
+        <li><a href="#">Cars &amp; Bikes Show</a></li>
+        <li><a href="#">Mall Display</a></li>
+        <li><a href="#">Event Emcee</a></li>
+        <li><a href="#">Media Professional</a></li>
+        <li><a href="#">Social Media Campaigns</a></li>
+        <li><a href="#">Influencer Campaigns</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-h">Contact</p>
+      <ul class="footer-links">
+        <li><a href="/cdn-cgi/l/email-protection#740117170115111715061718011607341319151d185a171b19"><span class="__cf_email__" data-cfemail="becbddddcbdfdbdddfccddd2cbdccdfed9d3dfd7d290ddd1d3">[email&#160;protected]</span></a></li>
+        <li><a href="https://www.uaecarclubs.com" target="_blank">www.uaecarclubs.com</a></li>
+        <li><a href="#">UAE</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 UAE CAR CLUBS — UCC</span>
+    <span>All rights reserved</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/vendor/jquery-3.6.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.meanmenu.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+/* ── SCROLL REVEAL ── */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+/* ── NAV SCROLL + ACTIVE LINK ── */
+const nav = document.getElementById('main-nav');
+const navLinks = document.querySelectorAll('.ucc-nav ul a:not(.nav-cta)');
+const sections = ['home','about','gallery','community','ucc-clubs','achievements','social','contact'];
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+
+  // Active link tracking
+  let current = 'home';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 120) current = id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active-link');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active-link');
+  });
+});
+
+/* ── HERO SLIDER — cinematic ── */
+const slides = document.querySelectorAll('.hero-slide');
+const dots   = document.querySelectorAll('.hero-dot');
+const heroBar = document.getElementById('heroBar');
+const HERO_DUR = 5000;
+let cur = 0, heroTimer;
+
+function heroGoTo(n) {
+  if (n === cur) return;
+  const leaving = slides[cur];
+  leaving.classList.remove('active');
+  leaving.classList.add('leaving');
+  leaving.addEventListener('animationend', () => leaving.classList.remove('leaving'), { once: true });
+
+  dots[cur].classList.remove('active');
+  cur = (n + slides.length) % slides.length;
+  slides[cur].classList.add('active');
+  dots[cur].classList.add('active');
+  heroResetBar();
+}
+
+function heroNext() { heroGoTo(cur + 1); }
+
+function heroResetBar() {
+  if (!heroBar) return;
+  heroBar.style.transition = 'none';
+  heroBar.style.width = '0%';
+  void heroBar.offsetWidth;
+  heroBar.style.transition = 'width ' + HERO_DUR + 'ms linear';
+  heroBar.style.width = '100%';
+}
+
+function heroStart() {
+  clearInterval(heroTimer);
+  heroTimer = setInterval(heroNext, HERO_DUR);
+  heroResetBar();
+}
+
+dots.forEach(d => d.addEventListener('click', () => {
+  clearInterval(heroTimer);
+  heroGoTo(+d.dataset.slide);
+  heroStart();
+}));
+
+/* Swipe on hero */
+let heroTouchX = 0;
+document.querySelector('.hero').addEventListener('touchstart', e => { heroTouchX = e.touches[0].clientX; });
+document.querySelector('.hero').addEventListener('touchend', e => {
+  const diff = heroTouchX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 40) { clearInterval(heroTimer); diff > 0 ? heroGoTo(cur+1) : heroGoTo(cur-1); heroStart(); }
+});
+
+heroStart();
+
+/* ── HAMBURGER ── */
+const burger = document.getElementById('burger');
+const mNav = document.getElementById('mobile-nav');
+burger.addEventListener('click', () => {
+  mNav.classList.toggle('open');
+  const spans = burger.querySelectorAll('span');
+  if (mNav.classList.contains('open')) {
+    spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+  } else {
+    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  }
+});
+mNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mNav.classList.remove('open');
+  const spans = burger.querySelectorAll('span');
+  spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+}));
+
+/* ── EMAILJS ── */
+
+
+
+document.getElementById('uccForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button');
+  btn.textContent = 'Sending…';
+  emailjs.send('service_mgqo4g8', 'template_k6uxdxs', {
+    from_name: document.getElementById('name').value.trim(),
+    from_email: document.getElementById('email').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    message: document.getElementById('Message').value.trim(),
+  }).then(function() {
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#1a7a3c';
+    document.getElementById('uccForm').reset();
+    setTimeout(function() { btn.textContent = 'Send Message →'; btn.style.background = ''; }, 4000);
+  }, function() {
+    btn.textContent = 'Failed — Try Again';
+    btn.style.background = '#7a1a1a';
+    setTimeout(function() { btn.textContent = 'Send Message →'; btn.style.background = ''; }, 3000);
+  });
+});
+</script>
+</body>
+</html>

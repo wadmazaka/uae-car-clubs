@@ -1,0 +1,776 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AURA ADVISORY F.Z.E</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="css/dripicons.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+
+    <!-- whatsapp icon -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+   
+.about-section {
+  padding: 100px 0;
+  background: #ffffff; /* White background */
+  color: #000;
+}
+
+.about-img img {
+  width: 100%;
+  border-radius: 15px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: 0.8s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-content {
+  padding-left: 30px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: 0.8s ease;
+}
+
+/* Golden small heading */
+.about-content h5 {
+  color: #c9a96e;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Main heading */
+.about-content h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+/* Paragraph */
+.about-content p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+/* List */
+.about-content ul {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+.about-content ul li {
+  margin-bottom: 10px;
+  list-style: none;
+  color: #333;
+}
+
+/* Golden check icon */
+.about-content ul li::before {
+  content: "✔";
+  color: #c9a96e;
+  margin-right: 10px;
+}
+
+/* Button */
+.about-btn {
+  background: linear-gradient(45deg, #c9a96e, #e6c07b);
+  color: #000;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.about-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Animation Active */
+.about-section.active .about-img img,
+.about-section.active .about-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+
+
+
+
+.approach-section {
+  background: #ffffff; /* White background */
+  padding: 100px 0;
+}
+
+.approach-content {
+  position: relative;
+}
+
+.gold-heading {
+  font-size: 30px;
+  color: #c9a96e; /* Golden */
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.gold-line {
+  width: 80px;
+  height: 4px;
+  background: #c9a96e;
+  margin-top: 30px;
+  border-radius: 2px;
+  transition: width 0.5s;
+}
+
+.gold-line:hover {
+  width: 120px;
+}
+
+.approach-content p {
+  font-size: 16px;
+  color: #000; /* Black text */
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.approach-img img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.approach-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .approach-section .row {
+    flex-direction: column-reverse;
+  }
+
+  .approach-img {
+    margin-bottom: 30px;
+  }
+}
+
+
+
+
+
+
+.who-we-serve {
+  background: url('images/dubai-bg.jpg') center/cover no-repeat;
+  padding: 100px 20px;
+  position: relative;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.who-we-serve .overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Header */
+.header h5 {
+  color: gold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 320px;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 20px;
+  color: #333;
+  font-size: 18px;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Bottom Text */
+.desc {
+  margin-top: 40px;
+  font-size: 16px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #eee;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 24px;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+
+
+.aura-who-section {
+  background: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+  padding: 100px 20px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.aura-overlay {
+  background: rgba(0,0,0,0.65);
+  padding: 60px 20px;
+}
+
+.aura-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Header */
+.aura-header h5 {
+  color: gold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.aura-header h2 {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+/* Grid */
+.aura-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Box */
+.aura-box {
+  width: 320px;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.4s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Image */
+.aura-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Title */
+.aura-box h3 {
+  padding: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Hover */
+.aura-box:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+/* Bottom Text */
+.aura-text {
+  margin-top: 40px;
+  color: #eee;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aura-header h2 {
+    font-size: 24px;
+  }
+
+  .aura-box {
+    width: 100%;
+  }
+}
+    </style>
+</head>
+
+<body>
+
+    <header class="header-area header-three">
+
+        <!-- Top Bar -->
+        <div class="header-top second-header d-none d-md-block">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-4 col-md-4 d-none d-lg-block">
+                        <div class="header-social">
+                            <span>
+                                Follow us:-
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/aura_advisory_?igsh=eXEyeHQ2eTJpYTYz"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 d-none d-lg-block text-right">
+                        <div class="header-cta">
+                            <ul>
+                                <li>
+                                    <div class="call-box">
+                                        <div class="icon">
+                                            <img src="img/icon/phone-call.png" alt="img">
+                                        </div>
+                                        <div class="text">
+                                            <span>Call Now !</span>
+                                            <strong><a href="tel:+971585976567 ">971 566 72 77 39</a></strong>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="call-box">
+                                        <div class="icon">
+                                            <img src="img/icon/mailing.png" alt="img">
+                                        </div>
+                                        <div class="text">
+                                            <span>Email Now</span>
+                                            <strong><a
+                                                    href="mailto:info@auraadvisoryglobal.com">info@auraadvisoryglobal.com</a></strong>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Menu -->
+        <div id="header-sticky" class="menu-area">
+            <div class="container">
+                <div class="second-menu">
+                    <div class="row align-items-center">
+
+                        <!-- Logo -->
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="images/logo.png" width="180px" height="130px" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="col-xl-9 col-lg-6">
+                            <div class="main-menu text-right text-xl-right">
+                                <nav id="mobile-menu">
+                                    <ul class="menu-inline">
+
+                                      
+                                 
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About UCC</a></li>
+                                    <li><a href="services.html">categories</a></li>
+                                   
+                                    <li><a href="contact.html">Contact</a></li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- Right Section -->
+                        <div class="col-xl-3 col-lg-3 text-right d-none d-lg-block">
+                            <div class="login">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile-menu"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+
+    <!-- header-end -->
+    <!-- offcanvas-area -->
+
+    <!-- offcanvas-end -->
+    <!-- main-area -->
+
+
+
+    <!-- WhatsApp Floating Button -->
+<a href="https://api.whatsapp.com/send?phone=971585976567&text=Hello! I’m interested in AURA ADVISORY services." 
+   class="float" target="_blank">
+  <i class="fab fa-whatsapp my-float"></i>
+</a>
+    </section>
+
+
+    <!-- IELTS About Section -->
+
+
+    <section class="hero-slider">
+        <div class="slides">
+
+            <div class="slide active" style="background-image: url('images/about.png');">
+                <div class="overlay">
+                    <h1>About Us</h1>
+                    <!-- <h1>CAR INSPECTION MASTER</h1>
+                <p>Complete Pre-Purchase Car Inspection to Help You Buy With Confidence</p> -->
+                    <a href="services.html" class="btn">View Services</a>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </section>
+
+
+<section class="about-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Image -->
+      <div class="col-lg-6">
+        <div class="about-img">
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop" alt="Business Consulting">
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="col-lg-6">
+        <div class="about-content">
+          <h5>About Aura Advisory</h5>
+          <h2>Complete Business Solutions Under One Roof</h2>
+          <p>
+            Aura Advisory F.Z.E is a full-service business consultancy firm in the UAE, 
+            dedicated to helping entrepreneurs, SMEs, and global brands establish and 
+            grow their presence with ease and confidence.
+          </p>
+
+          <p>
+            From company formation to banking, visas, and marketing, we provide 
+            complete end-to-end solutions with a seamless and hassle-free experience.
+          </p>
+
+          <ul>
+            <li>✔ Business Setup (Mainland, Freezone, Offshore)</li>
+            <li>✔ Corporate Bank Account Opening</li>
+            <li>✔ UAE Visa & PRO Services</li>
+            <li>✔ Branding & Digital Marketing</li>
+          </ul>
+
+          <a href="about.html" class="about-btn">Read More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="approach-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Text Column -->
+      <div class="col-lg-6">
+        <div class="approach-content">
+          <h2 class="gold-heading">Our Approach</h2>
+          <p>
+            We provide complete end-to-end solutions for our clients. From company formation to operational
+            setup, we handle everything including securing business locations, managing interiors, handling 
+            all documentation, and executing brand launch strategies.
+          </p>
+
+          <h2 class="gold-heading">Our Value Proposition</h2>
+          <p>
+            At Aura Advisory, we simplify the complex process of setting up and running a business in the UAE.
+            Our clients benefit from a seamless, hassle-free experience with all services delivered under one
+            roof. We act as a single point of contact, ensuring efficiency, transparency, and success.
+          </p>
+          
+          <!-- Decorative Golden Line -->
+          <div class="gold-line"></div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="col-lg-6">
+        <div class="approach-img">
+          <img src="images/ban.png" alt="Business Solutions">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="aura-who-section">
+  <div class="aura-overlay">
+    <div class="aura-container">
+
+      <div class="aura-header">
+        <h5>Who We Serve</h5>
+        <h2>Empowering Businesses Across UAE & Beyond</h2>
+      </div>
+
+      <div class="aura-grid">
+
+        <!-- Item 1 -->
+        <div class="aura-box">
+          <div class="aura-img">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=800&auto=format&fit=crop">
+          </div>
+          <h3>SMEs & Startups</h3>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="aura-box">
+          <div class="aura-img">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop">
+          </div>
+          <h3>Entrepreneurs</h3>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="aura-box">
+          <div class="aura-img">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop">
+          </div>
+          <h3>International Brands Expanding to UAE</h3>
+        </div>
+
+      </div>
+
+      <p class="aura-text">
+        Aura Advisory FZE is committed to helping businesses grow, scale,
+        and succeed in one of the world's most dynamic markets.
+      </p>
+
+    </div>
+  </div>
+</section>
+ <footer class="footer-bg footer-p pt-90" style="background-color: #125875; background-image: url(img/bg/footer-bg.png);">
+    <div class="footer-top pb-70">
+        <div class="container">
+            <div class="row justify-content-between">
+
+                <!-- About -->
+                <div class="col-xl-4 col-lg-4 col-sm-6">
+                    <div class="footer-widget mb-30">
+                        <div class="f-widget-title">
+                            <h2>About Aura Advisory F.Z.E</h2>
+                        </div>
+                        <div class="f-contact">
+                            <p>
+                                Aura Advisory F.Z.E is a full-service business consultancy firm in the UAE, 
+                                providing complete end-to-end solutions for SMEs, entrepreneurs, and global brands. 
+                                From business setup to growth, we simplify complex processes and deliver seamless, 
+                                efficient, and reliable services under one roof.
+                            </p>
+                        </div>
+                        <div class="footer-social mt-10">                                    
+                          
+                           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                           <a href="https://www.instagram.com/aura_advisory_?igsh=eXEyeHQ2eTJpYTYz"><i class="fab fa-instagram"></i></a>
+                        </div>    
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="footer-widget mb-30">
+                        <div class="f-widget-title">
+                            <h2>Our Services</h2>
+                        </div>
+                        <div class="footer-link">
+                            <ul>                                        
+                                <li><a href="services.html">Business Setup (Mainland, Freezone, Offshore)</a></li>
+                                <li><a href="services.html">Accounting & Bookkeeping</a></li>
+                                <li><a href="services.html">VAT & Corporate Tax Registration</a></li>
+                                <li><a href="services.html">AML (goAML) Registration</a></li>
+                                <li><a href="services.html">Corporate Bank Account Opening</a></li>
+                                <li><a href="services.html">Brand Launching & Digital Marketing</a></li>
+                                <li><a href="services.html">Project Management & Execution</a></li>
+                                <li><a href="services.html">UAE Visa & PRO Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-xl-4 col-lg-4 col-sm-6">
+                    <div class="footer-widget mb-30">
+                        <div class="f-widget-title">
+                            <h2>Contact Us</h2>
+                        </div>
+                        <div class="f-contact">
+                            <ul>
+                                <li class="phone-inline">
+                                    <i class="icon fal fa-phone"></i>
+                                   <span>
+                                       <a href="tel:+971585976567">+971585976567</a> 
+                                    </span>
+                                </li>
+                                <li>
+                                    <i class="icon fal fa-envelope"></i>
+                                    <span><a href="mailto:info@auraadvisoryglobal.com">info@auraadvisoryglobal.com</a></span>
+                                </li>
+
+                                <li style="display: flex; align-items: flex-start; gap: 10px;">
+                                    <i class="icon fal fa-map-marker-check" style="margin-top:5px;"></i>
+                                    <div>
+                                        <span>Ajman: 1F - C1, Ajman Freezone, Al Rashidiya 3, near Ajman Port.</span><br>
+                                        <span>Dubai: M7, Sheikh Rashid Building, Trade Centre 1, Dubai UAE</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright-wrap">
+        <div class="container">
+            <div class="row align-items-center">
+               
+                <div class="col-lg-4 text-center"></div>
+                <div class="col-lg-4 text-right text-xl-right">
+                    &copy; 2026 Aura Advisory F.Z.E. All rights reserved.     
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+window.addEventListener("scroll", function() {
+  const section = document.querySelector(".about-section");
+  const position = section.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.3;
+
+  if(position < screenPosition) {
+    section.classList.add("active");
+  }
+});
+</script>
+    <!-- footer-end -->
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/paroller.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/js_isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <script src="js/parallax-scroll.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/element-in-view.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+
+</html>
